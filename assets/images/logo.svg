@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Outer Arch -->
+  <path d="M12 42V24C12 17.3726 17.3726 12 24 12C30.6274 12 36 17.3726 36 24V42" stroke="#C5A46D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Inner Arch Detail -->
+  <path d="M16 42V24C16 19.5817 19.5817 16 24 16C28.4183 16 32 19.5817 32 24V42" stroke="#C5A46D" stroke-width="1" stroke-opacity="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Sun / Horizon Motif -->
+  <circle cx="24" cy="27" r="5" fill="#C5A46D" fill-opacity="0.85"/>
+  <!-- Horizon waterline -->
+  <line x1="10" y1="34" x2="38" y2="34" stroke="#C5A46D" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Sun rays subtle -->
+  <line x1="24" y1="18" x2="24" y2="20" stroke="#C5A46D" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="18" y1="21" x2="19.5" y2="22.5" stroke="#C5A46D" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="30" y1="21" x2="28.5" y2="22.5" stroke="#C5A46D" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Base Ground Line -->
+  <line x1="8" y1="42" x2="40" y2="42" stroke="#C5A46D" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,670 @@
+/* ==========================================================================
+   AURELLE RETREAT — Premium Boutique Hotel & Luxury Resort
+   Design System & Custom Typography Stylesheet
+   ========================================================================== */
+
+/* Google Fonts are imported in index.html for optimized non-blocking delivery */
+
+:root {
+  --color-deep-forest: #24372D;
+  --color-deep-forest-rgb: 36, 55, 45;
+  --color-warm-ivory: #F8F5EF;
+  --color-warm-ivory-rgb: 248, 245, 239;
+  --color-champagne-gold: #C5A46D;
+  --color-champagne-gold-rgb: 197, 164, 109;
+  --color-sand-beige: #D9CCB8;
+  --color-stone-grey: #77766F;
+  --color-charcoal: #242622;
+  
+  --color-ivory-subtle: #F2EDE4;
+  --color-ivory-border: #E5DEC9;
+  --color-forest-dark: #192720;
+  --color-gold-light: #DFCBA4;
+  --color-gold-muted: rgba(197, 164, 109, 0.2);
+
+  --font-serif: 'Cormorant Garamond', Garamond, Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --transition-luxury: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fast: all 0.25s ease-out;
+}
+
+/* Base Configuration & Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  background-color: var(--color-warm-ivory);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+  background-color: var(--color-warm-ivory);
+  line-height: 1.7;
+}
+
+/* Guard against AOS horizontal translation causing layout shift / mobile sway */
+[data-aos] {
+  max-width: 100%;
+}
+
+html, body {
+  touch-action: pan-y;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F0EAE0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A46D;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A8864F;
+}
+
+/* Typography Hierarchy */
+.font-serif-luxury {
+  font-family: var(--font-serif);
+  letter-spacing: -0.015em;
+}
+
+.font-sans-luxury {
+  font-family: var(--font-sans);
+}
+
+.tracking-editorial {
+  letter-spacing: 0.22em;
+}
+
+.tracking-widest-luxury {
+  letter-spacing: 0.3em;
+}
+
+/* Editorial Line Height & Spacing */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+/* Luxury Gold Selection */
+::selection {
+  background-color: #24372D;
+  color: #C5A46D;
+}
+
+/* Sticky Header Transitions & Crisp Contrast */
+#main-header {
+  transition: background 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              backdrop-filter 0.4s ease,
+              border-color 0.4s ease,
+              padding 0.3s ease,
+              box-shadow 0.4s ease,
+              color 0.3s ease;
+  background-color: #18241D !important;
+  border-bottom: 1px solid rgba(197, 164, 109, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  color: #F8F5EF !important;
+}
+
+/* Light Scrolled Header — High contrast & crystal clarity */
+#main-header.scrolled-light {
+  background: rgba(248, 245, 239, 0.98) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #242622 !important;
+  border-bottom: 1px solid rgba(197, 164, 109, 0.35) !important;
+  box-shadow: 0 4px 25px rgba(36, 38, 34, 0.08) !important;
+}
+
+#main-header.scrolled-light .brand-name-title {
+  color: #242622 !important;
+}
+
+#main-header.scrolled-light .nav-link {
+  color: #242622 !important;
+}
+
+#main-header.scrolled-light .nav-link:hover,
+#main-header.scrolled-light .nav-link.active-nav {
+  color: #C5A46D !important;
+}
+
+#main-header.scrolled-light #mobile-menu-btn {
+  color: #242622 !important;
+}
+
+.header-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#main-header.scrolled-light .header-pill-btn {
+  border-color: rgba(36, 38, 34, 0.25) !important;
+  color: #242622 !important;
+}
+
+#main-header.scrolled-light .header-pill-btn:hover {
+  border-color: #C5A46D !important;
+  background-color: rgba(197, 164, 109, 0.12) !important;
+  color: #C5A46D !important;
+}
+
+/* Dark Scrolled Header — Luxurious deep forest night ambiance */
+#main-header.scrolled-dark {
+  background: rgba(20, 29, 24, 0.97) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #F8F5EF !important;
+  border-bottom: 1px solid rgba(197, 164, 109, 0.25) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+#main-header.scrolled-dark .brand-name-title {
+  color: #F8F5EF !important;
+}
+
+#main-header.scrolled-dark .nav-link {
+  color: #F8F5EF !important;
+}
+
+#main-header.scrolled-dark .nav-link:hover,
+#main-header.scrolled-dark .nav-link.active-nav {
+  color: #C5A46D !important;
+}
+
+#main-header.scrolled-dark #mobile-menu-btn {
+  color: #F8F5EF !important;
+}
+
+#main-header.scrolled-dark .header-pill-btn {
+  border-color: rgba(197, 164, 109, 0.4) !important;
+  color: #C5A46D !important;
+}
+
+#main-header.scrolled-dark .header-pill-btn:hover {
+  background-color: rgba(197, 164, 109, 0.15) !important;
+}
+
+/* Underline link animation for Navigation */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--color-champagne-gold);
+  transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-link:hover::after,
+.nav-link.active-nav::after {
+  width: 100%;
+}
+
+.nav-link.active-nav {
+  color: var(--color-champagne-gold) !important;
+  font-weight: 600;
+}
+
+/* Mobile Drawer Active Link Highlight */
+.mobile-nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+  padding-left: 0.5rem;
+  border-left: 2px solid transparent;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.mobile-active-nav {
+  color: var(--color-champagne-gold) !important;
+  border-left-color: var(--color-champagne-gold);
+  padding-left: 1rem;
+  font-weight: 600;
+}
+
+/* Hero Parallax and Image Enhancements */
+.hero-bg-zoom {
+  animation: heroKenBurns 28s alternate infinite ease-in-out;
+  transform-origin: center center;
+}
+
+@keyframes heroKenBurns {
+  0% { transform: scale(1.0); }
+  100% { transform: scale(1.08); }
+}
+
+/* Scroll Down Pulse */
+@keyframes scrollIndicator {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); opacity: 0.3; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-scroll-bounce {
+  animation: scrollIndicator 2.2s infinite ease-in-out;
+}
+
+/* Elegant Button Shimmer & Border Effects */
+.btn-luxury-gold,
+.btn-luxury-outline,
+.btn-luxury-forest,
+.room-select-trigger,
+button[type="submit"],
+a[class*="btn-luxury"] {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.btn-luxury-gold {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-champagne-gold);
+  color: #242622;
+  transition: var(--transition-luxury);
+  border: 1px solid var(--color-champagne-gold);
+  white-space: nowrap !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn-luxury-gold:hover {
+  background-color: #B5935A;
+  border-color: #B5935A;
+  color: #FFFFFF;
+  box-shadow: 0 10px 25px rgba(197, 164, 109, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-luxury-outline {
+  position: relative;
+  background-color: transparent;
+  color: inherit;
+  border: 1px solid currentColor;
+  transition: var(--transition-luxury);
+  white-space: nowrap !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn-luxury-outline:hover {
+  background-color: var(--color-champagne-gold);
+  border-color: var(--color-champagne-gold);
+  color: #242622 !important;
+  box-shadow: 0 10px 25px rgba(197, 164, 109, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-luxury-forest {
+  background-color: var(--color-deep-forest);
+  color: var(--color-warm-ivory);
+  border: 1px solid var(--color-deep-forest);
+  transition: var(--transition-luxury);
+  white-space: nowrap !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn-luxury-forest:hover {
+  background-color: #192720;
+  border-color: var(--color-champagne-gold);
+  color: var(--color-champagne-gold);
+  box-shadow: 0 10px 25px rgba(36, 55, 45, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Image Hover Zoom Container */
+.img-zoom-wrapper {
+  overflow: hidden;
+}
+
+.img-zoom-wrapper img {
+  transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1), filter 0.85s ease;
+}
+
+.img-zoom-wrapper:hover img {
+  transform: scale(1.06);
+}
+
+/* Subtle Card Glow */
+.luxury-card {
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.45s ease, border-color 0.45s ease;
+}
+
+.luxury-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(36, 55, 45, 0.08);
+}
+
+/* Interactive Experience Selector Tabs */
+.exp-tab-btn {
+  transition: all 0.35s ease;
+  border-left: 2px solid transparent;
+}
+
+.exp-tab-btn.active {
+  border-left-color: var(--color-champagne-gold);
+  background-color: rgba(197, 164, 109, 0.08);
+}
+
+/* Dining Menu Tabs */
+.menu-tab-btn {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.menu-tab-btn.active {
+  color: var(--color-champagne-gold);
+  font-weight: 600;
+}
+
+.menu-tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--color-champagne-gold);
+  transition: width 0.3s ease;
+}
+
+.menu-tab-btn.active::after {
+  width: 60%;
+}
+
+/* Lightbox Styles */
+#gallery-lightbox {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+#gallery-lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#lightbox-img-container img {
+  max-height: 65vh;
+  max-width: 92vw;
+  object-fit: contain;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (min-width: 640px) {
+  #lightbox-img-container img {
+    max-height: 75vh;
+    max-width: 85vw;
+  }
+}
+
+/* Form Styles & Clean Validation */
+.form-input-luxury {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #D9CCB8;
+  color: var(--color-charcoal);
+  padding: 0.875rem 1.125rem;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 2px;
+}
+
+.form-input-luxury:focus {
+  outline: none;
+  border-color: var(--color-champagne-gold);
+  box-shadow: 0 0 0 3px rgba(197, 164, 109, 0.2);
+}
+
+.form-input-luxury.is-invalid {
+  border-color: #C0392B !important;
+  box-shadow: 0 0 0 2px rgba(192, 57, 43, 0.15) !important;
+}
+
+.error-text {
+  color: #C0392B;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.error-text.visible {
+  display: block;
+}
+
+/* Interactive Sound Wave Animation */
+.sound-bar {
+  display: inline-block;
+  width: 3px;
+  background-color: var(--color-champagne-gold);
+  border-radius: 2px;
+  transition: height 0.2s ease;
+}
+
+.sound-playing .sound-bar:nth-child(1) { animation: soundWave 1.1s infinite alternate ease-in-out; }
+.sound-playing .sound-bar:nth-child(2) { animation: soundWave 0.8s infinite 0.2s alternate ease-in-out; }
+.sound-playing .sound-bar:nth-child(3) { animation: soundWave 1.4s infinite 0.4s alternate ease-in-out; }
+.sound-playing .sound-bar:nth-child(4) { animation: soundWave 0.9s infinite 0.1s alternate ease-in-out; }
+
+@keyframes soundWave {
+  0% { height: 4px; }
+  100% { height: 16px; }
+}
+
+/* Toast Notification */
+#luxury-toast {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.45s ease;
+}
+
+#luxury-toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Back to Top Button Fixed Position (Bottom Right Corner) */
+#back-to-top {
+  position: fixed !important;
+  bottom: 1.5rem !important;
+  right: 1.5rem !important;
+  left: auto !important;
+}
+
+/* Reduced Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .hero-bg-zoom {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   COMPREHENSIVE LUXURY DARK MODE THEME STYLES
+   ========================================================================== */
+html.dark {
+  --color-warm-ivory: #141D18;
+  --color-charcoal: #F8F5EF;
+  background-color: #141D18;
+  color: #F8F5EF;
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #141D18;
+  color: #F8F5EF;
+}
+
+/* Custom Scrollbar in Dark Mode */
+html.dark ::-webkit-scrollbar-track {
+  background: #101713;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #C5A46D;
+}
+
+/* Dark Mode Sections Backgrounds */
+html.dark #stay,
+html.dark #experiences,
+html.dark #gallery,
+html.dark #reservation {
+  background-color: #141D18 !important;
+  color: #F8F5EF !important;
+}
+
+html.dark #dining,
+html.dark #reviews {
+  background-color: #18241D !important;
+  color: #F8F5EF !important;
+}
+
+/* Headings & Text Spans in Dark Mode */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5 {
+  color: #FFFFFF !important;
+}
+
+html.dark .text-\[\#24372D\],
+html.dark .text-\[\#242622\] {
+  color: #C5A46D !important;
+}
+
+html.dark p,
+html.dark .text-\[\#77766F\],
+html.dark .text-stone-grey {
+  color: rgba(248, 245, 239, 0.76) !important;
+}
+
+/* Dark Mode Luxury Cards */
+html.dark .bg-white,
+html.dark .luxury-card {
+  background-color: #1C2B22 !important;
+  border-color: rgba(197, 164, 109, 0.25) !important;
+  color: #F8F5EF !important;
+}
+
+html.dark .bg-\[\#F2EDE4\] {
+  background-color: #223429 !important;
+  color: #F8F5EF !important;
+}
+
+/* Experience Selector in Dark Mode */
+html.dark .exp-tab-btn {
+  background-color: #1C2B22 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark .exp-tab-btn:hover,
+html.dark .exp-tab-btn.active {
+  background-color: #25392E !important;
+  border-left-color: var(--color-champagne-gold) !important;
+}
+
+html.dark .exp-tab-btn h3 {
+  color: #F8F5EF !important;
+}
+
+/* Dining Menu Cards in Dark Mode */
+html.dark .menu-panel h4 {
+  color: #FFFFFF !important;
+}
+
+html.dark .border-dashed {
+  border-color: rgba(217, 204, 184, 0.25) !important;
+}
+
+html.dark .border-\[\#D9CCB8\]\/50,
+html.dark .border-\[\#D9CCB8\]\/40,
+html.dark .border-\[\#D9CCB8\]\/60,
+html.dark .border-\[\#D9CCB8\]\/30 {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Form Inputs in Dark Mode */
+html.dark .form-input-luxury {
+  background-color: #121914 !important;
+  border-color: rgba(197, 164, 109, 0.4) !important;
+  color: #F8F5EF !important;
+}
+
+html.dark .form-input-luxury:focus {
+  border-color: var(--color-champagne-gold) !important;
+  box-shadow: 0 0 0 3px rgba(197, 164, 109, 0.3) !important;
+}
+
+html.dark select.form-input-luxury option {
+  background-color: #1C2B22 !important;
+  color: #F8F5EF !important;
+}
+
+/* Form Labels & Typography in Dark Mode */
+html.dark label,
+html.dark span.font-medium {
+  color: #F8F5EF !important;
+}
+
+/* Modals in Dark Mode */
+html.dark #enquiry-success-modal > div,
+html.dark #legal-modal > div {
+  background-color: #1C2B22 !important;
+  border-color: rgba(197, 164, 109, 0.5) !important;
+  color: #F8F5EF !important;
+}
+
+html.dark #enquiry-success-modal .bg-\[\#F8F5EF\],
+html.dark #enquiry-success-modal .bg-\[\#F2EDE4\] {
+  background-color: #121914 !important;
+  border-color: rgba(197, 164, 109, 0.3) !important;
+  color: #F8F5EF !important;
+}
+
+/* Toast Notification in Dark Mode */
+html.dark #luxury-toast {
+  background-color: #101813 !important;
+  border-left-color: #C5A46D !important;
+  color: #F8F5EF !important;
+}
+
