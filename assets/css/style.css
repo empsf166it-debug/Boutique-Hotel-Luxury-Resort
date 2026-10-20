@@ -231,19 +231,26 @@ h1, h2, h3, h4 {
 }
 
 /* Mobile Drawer Active Link Highlight */
-.mobile-nav-link {
+a.mobile-nav-link:not(.btn-luxury-gold):not([class*="bg-[#C5A46D]"]) {
   position: relative;
   transition: all 0.3s ease;
   padding-left: 0.5rem;
   border-left: 2px solid transparent;
 }
 
-.mobile-nav-link:hover,
-.mobile-nav-link.mobile-active-nav {
+a.mobile-nav-link:not(.btn-luxury-gold):not([class*="bg-[#C5A46D]"]):hover,
+a.mobile-nav-link:not(.btn-luxury-gold):not([class*="bg-[#C5A46D]"]).mobile-active-nav {
   color: var(--color-champagne-gold) !important;
   border-left-color: var(--color-champagne-gold);
   padding-left: 1rem;
   font-weight: 600;
+}
+
+#mobile-menu a.bg-\[\#C5A46D\],
+#mobile-menu a.btn-luxury-gold {
+  color: #242622 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.15em !important;
 }
 
 /* Hero Parallax and Image Enhancements */
@@ -275,10 +282,19 @@ h1, h2, h3, h4 {
 .room-select-trigger,
 button[type="submit"],
 a[class*="btn-luxury"] {
-  white-space: nowrap !important;
-  word-break: keep-all !important;
   text-overflow: ellipsis;
-  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .btn-luxury-gold,
+  .btn-luxury-outline,
+  .btn-luxury-forest,
+  .room-select-trigger,
+  button[type="submit"],
+  a[class*="btn-luxury"] {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+  }
 }
 
 .btn-luxury-gold {
